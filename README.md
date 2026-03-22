@@ -107,6 +107,7 @@ Open *Module Settings &#8594; Actions & Sounds* to configure:
 | Audio — Load Formation | Sound effect when loading a formation |
 | Audio — Group (Crunch) | Sound effect on group collapse |
 | Audio — Ungroup (Explode) | Sound effect on group expand |
+| Audio — Kill them All | Sound effect when sending members to attack targets |
 
 ---
 
@@ -150,6 +151,14 @@ You can copy a group's ID from the Dashboard (small copy icon next to each group
 - All configuration is stored as **world settings** (shared across all GMs in the world).
 - Groups whose scene has been deleted are automatically cleaned up.
 - The Token HUD button can be hidden for specific actor types via *Module Settings &#8594; Actor Type Filter*.
+
+## 🚀 Installation
+
+Install via the Foundry VTT Module browser or use this manifest link:
+
+```
+https://raw.githubusercontent.com/brunocalado/group-tokens/main/module.json
+```
 
 ## ⚖️ Credits & License
 
