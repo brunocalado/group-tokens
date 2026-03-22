@@ -169,3 +169,5 @@ https://raw.githubusercontent.com/brunocalado/group-tokens/main/module.json
 * **audio_explode:** Navadaux for the "explode" sound provided via freesound.org, released under CCO 1.0 license
 
 * **audio_crunch:** Glaneur de sons for the "crunch" sound provided via freesound.org, released under CC BY 3.0 license
+
+* **Disclaimer:** This is a fork from this [Link](https://github.com/coffiarts/FoundryVTT-crunch-my-party).
