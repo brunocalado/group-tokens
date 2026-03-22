@@ -1,0 +1,101 @@
+/* =============================================================
+   Group Tokens — Scene Transfer & Scene Picker Dialogs
+   Both templates share the #gt-transfer-root selector.
+   ============================================================= */
+
+.gt-transfer-app .window-content,
+.gt-scene-pick-app .window-content { padding: 0; }
+
+#gt-transfer-root * { box-sizing: border-box; }
+
+#gt-transfer-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  padding: 14px;
+  font-size: 13px;
+}
+
+/* Info block — origin → destination summary */
+#gt-transfer-root .gt-tr-info {
+  background: var(--gt-surface);
+  border-left: 2px solid var(--gt-blue);
+  border-radius: 0 var(--gt-radius-sm) var(--gt-radius-sm) 0;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--gt-text-muted);
+  line-height: 1.6;
+}
+#gt-transfer-root .gt-tr-info strong { color: var(--gt-text); }
+
+/* Warning block */
+#gt-transfer-root .gt-tr-warning {
+  background: var(--gt-amber-bg);
+  border-left: 2px solid var(--gt-amber-border);
+  border-radius: 0 var(--gt-radius-sm) var(--gt-radius-sm) 0;
+  padding: 7px 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--gt-amber);
+}
+
+/* Scene picker label */
+#gt-transfer-root label {
+  font-size: 11px;
+  color: var(--gt-text-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Scene select dropdown */
+#gt-transfer-root select {
+  width: 100%;
+  padding: 7px 10px;
+  background: var(--gt-surface-2);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius);
+  color: var(--gt-text);
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: border-color 0.12s;
+}
+#gt-transfer-root select:focus { outline: none; border-color: var(--gt-blue); }
+#gt-transfer-root select option { background: var(--gt-surface-2); color: var(--gt-text); }
+
+/* Button row */
+#gt-transfer-root .gt-tr-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Confirm / Select — blue tinted */
+#gt-transfer-root .btn-confirm {
+  padding: 7px 16px;
+  border: 1px solid var(--gt-blue-border);
+  border-radius: var(--gt-radius);
+  background: var(--gt-blue-bg);
+  color: var(--gt-blue);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.12s;
+}
+#gt-transfer-root .btn-confirm:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+/* Cancel — ghost */
+#gt-transfer-root .btn-cancel {
+  padding: 7px 14px;
+  border: none;
+  border-radius: var(--gt-radius);
+  background: transparent;
+  color: var(--gt-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+#gt-transfer-root .btn-cancel:hover { color: var(--gt-text); }

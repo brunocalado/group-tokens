@@ -1,0 +1,139 @@
+/* =============================================================
+   Group Tokens — Actor Type Filter Dialog
+   ============================================================= */
+
+#gt-actor-type-filter-root *,
+#gt-actor-type-filter-root *::before,
+#gt-actor-type-filter-root *::after { box-sizing: border-box; }
+
+#gt-actor-type-filter-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1a1c22;
+  color: #eef0f6;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* ── Hint ─────────────────────────────────────────────────── */
+.gt-atf-hint {
+  font-size: 12px;
+  color: #9ca1b4;
+  margin: 14px 20px 4px;
+  line-height: 1.5;
+}
+
+/* ── Actor type list ──────────────────────────────────────── */
+.gt-atf-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+.gt-atf-list::-webkit-scrollbar           { width: 5px; }
+.gt-atf-list::-webkit-scrollbar-track     { background: transparent; }
+.gt-atf-list::-webkit-scrollbar-thumb     { background: #3a3e4c; border-radius: 3px; }
+.gt-atf-list::-webkit-scrollbar-thumb:hover { background: #4e536a; }
+
+.gt-atf-item {
+  border-bottom: 1px solid #2a2d38;
+}
+.gt-atf-item:last-child { border-bottom: none; }
+
+.gt-atf-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px;
+  cursor: pointer;
+  transition: background 0.1s;
+  border-radius: 4px;
+}
+.gt-atf-item label:hover { background: rgba(255,255,255,0.04); }
+
+.gt-atf-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #5b9cf6;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.gt-atf-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #eef0f6;
+  flex: 1;
+}
+
+.gt-atf-type-id {
+  font-size: 11px;
+  color: #555a6e;
+  font-family: monospace;
+}
+
+.gt-atf-no-types {
+  margin: 16px 20px;
+  font-size: 12px;
+  color: #555a6e;
+  font-style: italic;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.gt-atf-footer {
+  padding: 10px 16px;
+  background: #22252e;
+  border-top: 1px solid #2d3140;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Save button */
+.gt-atf-btn-save,
+.gt-atf-btn-save:focus,
+.gt-atf-btn-save:active {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border: 1px solid rgba(91, 156, 246, 0.40);
+  border-radius: 6px;
+  background: rgba(91, 156, 246, 0.14);
+  color: #5b9cf6;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.1s;
+  box-sizing: border-box;
+}
+.gt-atf-btn-save:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+/* Cancel button */
+.gt-atf-btn-cancel,
+.gt-atf-btn-cancel:focus,
+.gt-atf-btn-cancel:active {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca1b4;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.12s;
+  box-sizing: border-box;
+}
+.gt-atf-btn-cancel:hover { color: #eef0f6; }

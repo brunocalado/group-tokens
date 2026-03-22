@@ -1,0 +1,28 @@
+<div id="gt-actor-type-filter-root">
+
+  <p class="gt-atf-hint">
+    Uncheck actor types to hide the Group Tokens button from their Token HUD.
+  </p>
+
+  {{#if actorTypes.length}}
+    <ul class="gt-atf-list">
+      {{#each actorTypes}}
+        <li class="gt-atf-item">
+          <label>
+            <input type="checkbox" data-type="{{type}}" {{#if enabled}}checked{{/if}} />
+            <span class="gt-atf-label">{{label}}</span>
+            <span class="gt-atf-type-id">({{type}})</span>
+          </label>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="gt-atf-no-types">No actor types found in the current game system.</p>
+  {{/if}}
+
+  <footer class="gt-atf-footer">
+    <button class="gt-atf-btn-cancel" data-action="cancel-dialog">Cancel</button>
+    <button class="gt-atf-btn-save" data-action="save-dialog"><i class="fas fa-save"></i> Save</button>
+  </footer>
+
+</div>

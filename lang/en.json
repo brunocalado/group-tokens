@@ -1,0 +1,118 @@
+{
+  "group-tokens": {
+    "setting": {
+      "debug": {
+        "name": "Debug mode",
+        "hint": "Client-side setting enabling extended debug logging."
+      },
+      "groups": {
+        "name": "Group data",
+        "hint": "Internal storage for all configured groups. Managed automatically — do not edit manually."
+      },
+      "gatherSpeed": {
+        "name": "\"Get Over Here\" movement speed",
+        "hint": "Controls how fast member tokens walk toward the leader when using \"Get Over Here\".",
+        "choices": {
+          "fast": "Fast",
+          "normal": "Normal",
+          "slow": "Slow"
+        }
+      },
+      "getInPositionRadius": {
+        "name": "\"Get in Position\" spread radius (grid squares)",
+        "hint": "Maximum spread distance in grid squares from the leader. Always counted in squares — the scene's distance unit (feet, meters, etc.) does not affect this value."
+      },
+      "audioFile4GetOverHere": {
+        "name": "\"Get Over Here\" audio",
+        "hint": "Sound played for all clients when \"Get Over Here\" is used."
+      },
+      "audioFile4GetInPosition": {
+        "name": "\"Get in Position\" audio",
+        "hint": "Sound played for all clients when \"Get in Position\" is used."
+      },
+      "audioFile4LoadFormation": {
+        "name": "\"Load Formation\" audio",
+        "hint": "Sound played for all clients when \"Load Formation\" is used."
+      },
+      "audioFile4Crunch": {
+        "name": "Audio file on \"Group\"",
+        "hint": "Audio file (relative path) to be played when grouping."
+      },
+      "audioFile4Explode": {
+        "name": "Audio file on \"Ungroup\"",
+        "hint": "Audio file (relative path) to be played when ungrouping."
+      },
+      "hudActorTypeFilter": {
+        "name": "Token HUD actor type filter",
+        "hint": "List of actor types for which the Token HUD button is hidden."
+      }
+    },
+    "errMsg": {
+      "pleaseCheckYourTokenSelection": "Please check your group configuration",
+      "invalidTokenCount": "Required: exactly ONE group token and MORE THAN ONE member tokens",
+      "groupAndMembersIntersect": "A token cannot appear both as a member and as the group token.",
+      "tooManyMemberTokens": "Member list too long",
+      "invalidNumberOfMemberTokens": "Invalid number of tokens selected. A group must consist of 2 to 25 members.",
+      "notUniqueInScene": "is not unique in the scene!",
+      "tokensMissingInScene": "Tokens missing in scene",
+      "cannotDetermineAction": "Cannot determine action!",
+      "membersAndPartyAllHidden": "None of the involved tokens are currently visible.",
+      "pleaseWaitStillBusy": "Please wait for the current action to complete ...",
+      "pleaseSelectToken": "Please select at least one scene token to use this function.",
+      "movementActionNotFound": "Unable to move token: the following movement action was not found in CONFIG.Token.movement.actions: ",
+      "pleaseReportThisError": "Please report this error to the module author.",
+      "pleaseActivateTokenLayer": "Please activate the token layer (top-left menu) to use this function.",
+      "sceneNotFound": "Group scene no longer exists",
+      "noGroupOnCurrentScene": "No configured group exists on the current scene.",
+      "selectAtLeastTwoTokens": "Select at least 2 tokens before grouping.",
+      "gmOnly": "GM only.",
+      "noTokensSelected": "No tokens selected.",
+      "tokenNotFoundOnScene": "Token not found on current scene."
+    },
+    "dashboard": {
+      "status": {
+        "grouped": "Grouped",
+        "expanded": "Expanded"
+      },
+      "collapse": "Collapse",
+      "expand": "Expand",
+      "clearTitle": "Clear Group Configuration",
+      "clearConfirm": "Clear configuration for group \"{partyName}\"?",
+      "groupCleared": "Group cleared."
+    },
+    "contextMenu": {
+      "roleParty": "Group token",
+      "roleMember": "Member token",
+      "ofGroup": "of Group #{groupIndex}",
+      "multiSelectHint": "{count} tokens selected — click Create to form a new group.",
+      "multiSelectSubHint": "Pick one of the selected tokens as leader (no external token needed), or any other token for classic mode.",
+      "noGroupHint": "not part of any configured group. Select 2+ tokens to create a group.",
+      "addedToGroup": "\"{tokenName}\" added to Group #{groupIndex}.",
+      "removedFromGroups": "\"{tokenNames}\" removed from {count} group(s).",
+      "notInAnyGroup": "\"{tokenNames}\" not found in any configured group."
+    },
+    "partyPrompt": {
+      "label": "Choose the group token:",
+      "hint": "Pick one of the selected tokens to be the group leader.",
+      "noTokens": "No tokens selected",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "promptForPartyTokenNameTitle": "What is the group token?",
+    "promptForPartyTokenNameText": "Choose the token that will represent the group when collapsed.",
+    "saveButton": "Save",
+    "cancelButton": "Cancel",
+    "groupingConfirmation": "The following tokens have been assigned to <strong>group #{partyNo} [token: {partyTokenName}]</strong>",
+    "settingsMenu": {
+      "membersSection": "Group Member Configuration"
+    },
+    "hud": {
+      "findLeader": "Find Leader of Group #{groupIndex}",
+      "addToGroup": "Add to Group #{groupIndex}",
+      "toggleGroup": "Toggle Group #{groupIndex}",
+      "findGroup": "Find Group #{groupIndex}",
+      "getOverHere": "Get Over Here!",
+      "getInPosition": "Get in Position!"
+    }
+  }
+}

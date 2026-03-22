@@ -1,0 +1,69 @@
+<div id="gt-db-root">
+  <div class="gt-db-scroll">
+    {{#each groups}}
+    <div class="gt-group-wrapper" data-group-id="{{groupId}}">
+      <div class="gt-row{{#if isEmpty}} gt-empty{{/if}}" data-group-id="{{groupId}}">
+        <div class="gt-badge">{{groupIndex}}</div>
+        {{#if isEmpty}}
+        <div class="gt-info"><span class="gt-name gt-empty-label">Empty group</span></div>
+        <div class="gt-actions">
+          <button type="button" class="gt-btn gt-btn-clear" data-action="clearGroup" data-group-id="{{groupId}}" title="Remove empty group">
+            <i class="fas fa-times"></i> Clear
+          </button>
+        </div>
+        {{else}}
+        <div class="gt-info">
+          <div class="gt-name-row">
+            <div class="gt-name">{{partyTokenName}}</div>
+            <button type="button" class="gt-btn-copy-id" data-action="copyGroupId" data-group-id="{{groupId}}" title="Copy Group ID: {{groupId}}">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+        <div class="gt-status-wrapper">
+          <div class="gt-status-title">Status</div>
+          <span class="gt-status {{statusClass}}">{{statusLabel}}</span>
+        </div>
+        <div class="gt-actions">
+          <button type="button" class="gt-btn gt-btn-expand" data-action="expand" data-group-id="{{groupId}}" title="Show members">
+            <i class="fas fa-users"></i> Expand
+          </button>
+          <button type="button" class="gt-btn gt-btn-toggle gt-pulse" data-action="toggle" data-group-id="{{groupId}}" title="Toggle Group #{{groupIndex}}">
+            <i class="fas fa-sync-alt"></i> Toggle
+          </button>
+          <button type="button" class="gt-btn gt-btn-find" data-action="find" data-group-id="{{groupId}}" title="Find Group #{{groupIndex}}">
+            <i class="fas fa-search"></i> Find
+          </button>
+          <button type="button" class="gt-btn gt-btn-transfer" data-action="transfer" data-group-id="{{groupId}}" title="Transfer group to another scene">
+            <i class="fas fa-door-open"></i> Transfer
+          </button>
+          <button type="button" class="gt-btn gt-btn-clear" data-action="clearGroup" data-group-id="{{groupId}}" title="Clear Group #{{groupIndex}} configuration">
+            <i class="fas fa-times"></i> Clear
+          </button>
+        </div>
+        {{/if}}
+      </div>
+      {{#unless isEmpty}}
+      <div class="gt-members-list" data-group-id="{{groupId}}" hidden>
+        {{#each members}}
+        <div class="gt-member-row" data-member-id="{{id}}">
+          <span class="gt-member-name">{{name}}</span>
+          <div class="gt-member-actions">
+            <button type="button" class="gt-btn gt-btn-promote-member" data-action="promoteMember" data-group-id="{{../groupId}}" data-member-id="{{id}}" title="Promote to Leader">
+              <i class="fas fa-arrow-up"></i> Promote
+            </button>
+            <button type="button" class="gt-btn gt-btn-find-member" data-action="findMember" data-group-id="{{../groupId}}" data-member-id="{{id}}" title="Find on scene">
+              <i class="fas fa-search"></i> Find
+            </button>
+            <button type="button" class="gt-btn gt-btn-remove-member" data-action="removeMember" data-group-id="{{../groupId}}" data-member-id="{{id}}" title="Remove from group">
+              <i class="fas fa-user-minus"></i> Remove
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{/unless}}
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<div id="gt-instr-root">
+  <div class="gt-instr-scroll" id="gt-instr-scroll">
+
+    <h3>What does this module do?</h3>
+    <p>Group Tokens lets you merge several tokens into one and split them back apart. Perfect for traveling parties, squads of enemies, or any group that moves together.</p>
+
+    <h3>1 &mdash; Create a group</h3>
+    <ol>
+      <li>Select <strong>2 or more tokens</strong> on the map.</li>
+      <li>Right-click any of them &rarr; click the <strong>Group Tokens icon</strong> in the HUD.</li>
+      <li>Click <strong>Create Group</strong>.</li>
+      <li>Pick which token will be the <strong>leader</strong> (the one that stays visible when grouped).</li>
+    </ol>
+    <div class="gt-instr-tip">The leader token represents the whole group on the map. All other tokens will hide behind it when grouped.</div>
+
+    <h3>2 &mdash; Group / Ungroup</h3>
+    <p>Right-click the leader token &rarr; Group Tokens icon &rarr; <strong>Toggle Group</strong>.</p>
+    <ul>
+      <li><strong>Group</strong> &mdash; all members fly into the leader and disappear.</li>
+      <li><strong>Ungroup</strong> &mdash; all members reappear around the leader in a spiral pattern.</li>
+    </ul>
+
+    <h3>3 &mdash; Get Over Here!</h3>
+    <p>After ungrouping, members may be scattered. Right-click the leader &rarr; <strong>Get Over Here!</strong> to call them back. They walk toward the leader using A* pathfinding that respects walls.</p>
+
+    <h3>4 &mdash; Get in Position!</h3>
+    <p>Right-click the leader &rarr; <strong>Get in Position!</strong> to spread members into a circle formation around the leader. The circle radius is configurable in <em>Actions &amp; Sounds</em> settings.</p>
+
+    <h3>5 &mdash; Save &amp; Load Formation</h3>
+    <p>Arrange your members exactly where you want them, then preserve that layout:</p>
+    <ol>
+      <li>Right-click the leader &rarr; <strong>Save Formation</strong> &mdash; stores each member's position relative to the leader.</li>
+      <li>Later, right-click the leader &rarr; <strong>Load Formation</strong> &mdash; members walk back to their saved spots using the same animated pathfinding as Get Over Here.</li>
+    </ol>
+    <div class="gt-instr-tip">The Load Formation button only appears after a formation has been saved. Formations persist across sessions.</div>
+
+    <h3>6 &mdash; Scene Transfer</h3>
+    <p>Move an entire group to another scene while keeping all token data (HP, items, active effects):</p>
+    <ul>
+      <li><strong>Copy / Paste:</strong> copy the leader token and paste it into another scene. The module intercepts the action, shows a confirmation dialog, and transfers all members automatically.</li>
+      <li><strong>Dashboard:</strong> click the <strong>Transfer</strong> button next to any group and pick a destination scene.</li>
+    </ul>
+    <div class="gt-instr-tip">Groups arrive in collapsed (grouped) state — ungroup at the destination to spread members out.</div>
+
+    <h3>7 &mdash; Dashboard</h3>
+    <p>Open the Dashboard from the HUD or from module settings to see all your groups at a glance. From there you can:</p>
+    <ul>
+      <li>Toggle, find, or transfer any group.</li>
+      <li>Promote a member to leader, remove members, or delete a group.</li>
+      <li>Copy a group's ID for use in macros.</li>
+    </ul>
+
+    <h3>8 &mdash; Add or Remove Tokens</h3>
+    <ul>
+      <li><strong>Add:</strong> right-click an ungrouped token &rarr; Group Tokens icon &rarr; <strong>Add to Group</strong>.</li>
+      <li><strong>Remove:</strong> select one or more tokens &rarr; right-click &rarr; Group Tokens icon &rarr; <strong>Remove from Group</strong>.</li>
+    </ul>
+
+    <h3>9 &mdash; Kill them All!</h3>
+    <p>Send group members to attack GM-targeted enemies directly from the canvas:</p>
+    <ol>
+      <li>With the group ungrouped, <strong>target one or more enemy tokens</strong> as the GM.</li>
+      <li>Right-click the leader &rarr; <strong>Kill them All!</strong></li>
+      <li>A slider dialog opens &mdash; choose how many members to send.</li>
+      <li>Members animate toward the targets and cluster around them.</li>
+    </ol>
+    <div class="gt-instr-tip">With multiple targets, members are distributed round-robin. The button only appears when the group is ungrouped and at least one GM target is set.</div>
+
+    <h3>10 &mdash; Sounds</h3>
+    <p>Open <em>Module Settings &rarr; Actions &amp; Sounds</em> to configure audio for each action: Group, Ungroup, Get Over Here, Get in Position, and Load Formation.</p>
+
+    <h3>Good to know</h3>
+    <ul>
+      <li>Only the <strong>GM</strong> can create, toggle, and manage groups.</li>
+      <li>A group can have up to <strong>25 members</strong>.</li>
+      <li>All actions are available via <strong>right-click &rarr; Group Tokens icon</strong> on any token.</li>
+      <li><strong>Leader tokens</strong> get a red border and a crown badge; <strong>member tokens</strong> get a blue border and a pawn badge. These markers are GM-only.</li>
+      <li>The HUD button can be hidden for specific actor types via <em>Module Settings &rarr; Actor Type Filter</em>.</li>
+    </ul>
+
+  </div>
+</div>

@@ -1,0 +1,63 @@
+{
+  "id": "group-tokens",
+  "title": "Group Tokens",
+  "description": "Easily collapse groups of tokens (representing parties) into a single token and vice versa.",
+  "version": "0.0.1",
+
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+
+  "authors": [
+    {
+      "name": "Mestre Digital"
+    }
+  ],
+
+  "styles": [
+    "styles/base.css",
+    "styles/group-config.css",
+    "styles/instructions.css",
+    "styles/dashboard.css",
+    "styles/context-menu.css",
+    "styles/scene-transfer.css",
+    "styles/party-prompt.css",
+    "styles/actions-settings.css",
+    "styles/actor-type-filter.css",
+    "styles/kill-them-all.css"
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "macros",
+      "label": "Group Tokens - Macros",
+      "path": "packs/macros",
+      "type": "Macro",
+      "flags": {},
+      "banner": "modules/group-tokens/assets/images/banner.webp" 
+    }
+  ],
+
+  "media": [{
+    "type": "setup",
+    "url": "modules/group-tokens/assets/images/thumbnail.webp",
+    "thumbnail": "modules/group-tokens/assets/images/thumbnail.webp"
+  }], 
+
+  "url": "https://github.com/brunocalado/group-tokens",
+  "manifest": "https://raw.githubusercontent.com/brunocalado/group-tokens/main/module.json",
+  "download": "https://codeload.github.com/brunocalado/group-tokens/zip/main"
+
+}

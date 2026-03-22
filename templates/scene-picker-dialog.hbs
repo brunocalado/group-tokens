@@ -1,0 +1,12 @@
+<div id="gt-transfer-root">
+  <label>Destination scene</label>
+  <select id="gt-scene-select">
+    {{#each scenes}}
+    <option value="{{id}}">{{name}}{{#if isActive}} (active){{/if}}</option>
+    {{/each}}
+  </select>
+  <div class="gt-tr-actions">
+    <button class="btn-cancel" id="gt-tr-cancel">Cancel</button>
+    <button class="btn-confirm" id="gt-tr-confirm">Select</button>
+  </div>
+</div>

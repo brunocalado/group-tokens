@@ -1,0 +1,84 @@
+/* =============================================================
+   Group Tokens — Instructions Dialog
+   ============================================================= */
+
+/* AppV2 container — same pattern as Dashboard (no height: 100%) */
+.gt-instructions-app .window-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gt-instructions-app footer.form-footer {
+  display: none;
+}
+
+#gt-instr-root * { box-sizing: border-box; }
+
+#gt-instr-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* Scrollable content area */
+#gt-instr-root .gt-instr-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+  line-height: 1.65;
+  flex: 1;
+  min-height: 0; /* prevents flex child from growing past allocated height */
+}
+
+#gt-instr-root .gt-instr-scroll::-webkit-scrollbar           { width: 5px; }
+#gt-instr-root .gt-instr-scroll::-webkit-scrollbar-track     { background: transparent; }
+#gt-instr-root .gt-instr-scroll::-webkit-scrollbar-thumb     { background: var(--gt-surface-2); border-radius: 3px; }
+#gt-instr-root .gt-instr-scroll::-webkit-scrollbar-thumb:hover { background: var(--gt-border-hover); }
+
+/* Section headings */
+#gt-instr-root h3 {
+  color: var(--gt-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 18px 0 7px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gt-border);
+}
+#gt-instr-root h3:first-child { margin-top: 0; }
+
+/* Body text */
+#gt-instr-root p  { color: var(--gt-text); margin: 0 0 8px; font-size: 13px; }
+#gt-instr-root ul { margin: 0 0 10px; padding-left: 18px; }
+#gt-instr-root li { color: var(--gt-text); font-size: 13px; margin-bottom: 4px; }
+
+/* Tip / callout block */
+#gt-instr-root .gt-instr-tip {
+  background: var(--gt-surface);
+  border-left: 2px solid var(--gt-blue);
+  border-radius: 0 var(--gt-radius-sm) var(--gt-radius-sm) 0;
+  padding: 8px 12px;
+  margin: 10px 0;
+  font-size: 13px;
+  color: var(--gt-text);
+}
+
+/* Inline code */
+#gt-instr-root code {
+  background: var(--gt-surface-2);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius-sm);
+  padding: 1px 5px;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  color: var(--gt-code);
+}
+

@@ -1,0 +1,20 @@
+<div id="gt-kill-them-all-root">
+  <p class="gt-kta-hint">
+    Sending <strong><span id="gt-kta-count-display">{{defaultCount}}</span></strong>
+    member(s) to attack <strong>{{targetCount}}</strong> target(s).
+  </p>
+  <div class="gt-kta-range-row">
+    <span class="gt-kta-range-label">1</span>
+    <input type="range"
+           min="1" max="{{visibleMemberCount}}"
+           value="{{defaultCount}}" step="1"
+           data-action="buffer-range" />
+    <span class="gt-kta-range-value">{{defaultCount}}</span>
+  </div>
+  <div class="gt-kta-footer">
+    <button class="gt-kta-btn-cancel" data-action="cancel-dialog">Cancel</button>
+    <button class="gt-kta-btn-send" data-action="send-dialog">
+      <i class="fas fa-skull-crossbones"></i> Send!
+    </button>
+  </div>
+</div>

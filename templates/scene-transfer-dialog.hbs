@@ -1,0 +1,15 @@
+<div id="gt-transfer-root">
+  <div class="gt-tr-info">
+    Moving from <strong>{{originSceneName}}</strong> → <strong>{{destSceneName}}</strong><br>
+    Includes: <strong>{{partyTokenName}}</strong>
+    + {{memberCount}} member(s): {{memberNames}}
+  </div>
+  <div class="gt-tr-warning">
+    ⚠ All tokens will be <strong>deleted from the origin scene</strong> and recreated in the destination.
+    Token data (HP, items, effects) is fully preserved.
+  </div>
+  <div class="gt-tr-actions">
+    <button class="btn-cancel" id="gt-tr-cancel">Cancel</button>
+    <button class="btn-confirm" id="gt-tr-confirm">Transfer</button>
+  </div>
+</div>

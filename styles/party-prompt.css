@@ -1,0 +1,89 @@
+/* =============================================================
+   Group Tokens — Party Token Picker Dialog
+   Replaces the inline <style> tag injected by main.js.
+   ============================================================= */
+
+.gt-prompt-app .window-content { padding: 0; }
+
+#gt-prompt-root * { box-sizing: border-box; }
+
+#gt-prompt-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  padding: 14px;
+  font-size: 13px;
+}
+
+/* Descriptive label above the dropdown */
+#gt-prompt-root .gt-prompt-label {
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+#gt-prompt-root .gt-prompt-label em {
+  display: block;
+  font-style: normal;
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 4px;
+}
+
+/* Token select dropdown */
+#gt-prompt-root select {
+  width: 100%;
+  padding: 7px 10px;
+  background: var(--gt-surface-2);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius);
+  color: var(--gt-text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: border-color 0.12s;
+}
+#gt-prompt-root select:focus { outline: none; border-color: var(--gt-blue); }
+#gt-prompt-root select option { background: var(--gt-surface-2); color: var(--gt-text); }
+
+/* Button row */
+#gt-prompt-root .gt-prompt-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Confirm — solid blue with white text */
+#gt-prompt-root .btn-confirm {
+  padding: 7px 16px;
+  border: 1px solid var(--gt-blue);
+  border-radius: var(--gt-radius);
+  background: var(--gt-blue);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.12s;
+}
+#gt-prompt-root .btn-confirm:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+/* Cancel — outlined white */
+#gt-prompt-root .btn-cancel {
+  padding: 7px 14px;
+  border: 1px solid #ffffff;
+  border-radius: var(--gt-radius);
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+#gt-prompt-root .btn-cancel:hover {
+  background: #ffffff;
+  color: var(--gt-bg);
+}

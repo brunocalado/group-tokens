@@ -1,0 +1,294 @@
+/* =============================================================
+   Group Tokens — Dashboard Dialog
+   ============================================================= */
+
+/* AppV2 container — replaces the old JS-forced layout on .window-content */
+.gt-dashboard-app .window-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.gt-dashboard-app footer.form-footer {
+    display: none;
+}
+
+#gt-db-root * { box-sizing: border-box; }
+
+#gt-db-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* Scrollable group list — flex: 1 fills remaining space, no JS recalc needed */
+#gt-db-root .gt-db-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 12px;
+  flex: 1;
+  min-height: 80px;
+}
+
+#gt-db-root .gt-db-scroll::-webkit-scrollbar           { width: 5px; }
+#gt-db-root .gt-db-scroll::-webkit-scrollbar-track     { background: transparent; }
+#gt-db-root .gt-db-scroll::-webkit-scrollbar-thumb     { background: var(--gt-surface-2); border-radius: 3px; }
+#gt-db-root .gt-db-scroll::-webkit-scrollbar-thumb:hover { background: var(--gt-border-hover); }
+
+/* Group row */
+#gt-db-root .gt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gt-surface);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius);
+  padding: 8px 11px;
+  margin-bottom: 6px;
+  transition: border-color 0.12s;
+}
+
+#gt-db-root .gt-row:hover { border-color: var(--gt-border-hover); }
+#gt-db-root .gt-row.gt-empty { opacity: 0.45; }
+
+/* Flat numbered group tag (replaces gold circle badge) */
+#gt-db-root .gt-badge {
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: var(--gt-radius-sm);
+  background: var(--gt-surface-2);
+  color: var(--gt-text-muted);
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+#gt-db-root .gt-empty .gt-badge {
+  color: var(--gt-text-dim);
+}
+
+/* Token info block */
+#gt-db-root .gt-info { flex: 1; min-width: 0; }
+
+#gt-db-root .gt-name-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+#gt-db-root .gt-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gt-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#gt-db-root .gt-btn-copy-id {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  color: var(--gt-text-dim);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 10px;
+  transition: color 0.12s, background 0.12s;
+  box-sizing: border-box;
+}
+#gt-db-root .gt-btn-copy-id:hover {
+  color: var(--gt-blue);
+  background: var(--gt-blue-bg);
+}
+
+#gt-db-root .gt-members {
+  font-size: 11px;
+  color: var(--gt-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+/* Status pills */
+#gt-db-root .gt-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+#gt-db-root .gt-status.grouped  { background: var(--gt-green-bg);  color: var(--gt-green);  border: 1px solid var(--gt-green-border); }
+#gt-db-root .gt-status.expanded { background: var(--gt-blue-bg);   color: var(--gt-blue);   border: 1px solid var(--gt-blue-border); }
+#gt-db-root .gt-status.unknown  { background: var(--gt-surface-2); color: var(--gt-text-dim); border: 1px solid var(--gt-border); }
+
+/* Action button group */
+#gt-db-root .gt-actions { display: flex; gap: 5px; flex-shrink: 0; }
+
+/* Base button */
+#gt-db-root .gt-btn {
+  padding: 5px 9px;
+  border-radius: var(--gt-radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.12s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#gt-db-root .gt-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+/* Toggle — blue */
+#gt-db-root .gt-btn-toggle {
+  background: var(--gt-blue-bg);
+  color: var(--gt-blue);
+  border: 1px solid var(--gt-blue-border);
+}
+
+/* Find — indigo */
+#gt-db-root .gt-btn-find {
+  background: var(--gt-indigo-bg);
+  color: var(--gt-indigo);
+  border: 1px solid var(--gt-indigo-border);
+}
+
+/* Create — green */
+#gt-db-root .gt-btn-create {
+  background: var(--gt-green-bg);
+  color: var(--gt-green);
+  border: 1px solid var(--gt-green-border);
+}
+
+/* Transfer — amber */
+#gt-db-root .gt-btn-transfer {
+  background: var(--gt-amber-bg);
+  color: var(--gt-amber);
+  border: 1px solid var(--gt-amber-border);
+  flex-shrink: 0;
+}
+
+/* Clear — red */
+#gt-db-root .gt-btn-clear {
+  background: var(--gt-red-bg);
+  color: var(--gt-red);
+  border: 1px solid var(--gt-red-border);
+}
+
+/* Empty group label */
+#gt-db-root .gt-empty-label {
+  font-size: 11px;
+  color: var(--gt-text-dim);
+  font-style: italic;
+}
+
+/* Subtle pulse on the primary Toggle button */
+@keyframes gt-pulse-toggle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(59, 130, 246, 0); }
+}
+#gt-db-root .gt-btn-toggle.gt-pulse { animation: gt-pulse-toggle 2.4s infinite; }
+
+/* Expand — purple/indigo variant */
+#gt-db-root .gt-btn-expand {
+  background: var(--gt-indigo-bg);
+  color: var(--gt-indigo);
+  border: 1px solid var(--gt-indigo-border);
+}
+
+/* Member list — collapsible panel below each group row */
+#gt-db-root .gt-members-list {
+  background: var(--gt-surface);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius);
+  margin-top: 3px;
+  margin-bottom: 6px;
+  padding: 4px 8px;
+}
+
+#gt-db-root .gt-group-wrapper .gt-row {
+  margin-bottom: 6px;
+}
+
+#gt-db-root .gt-member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px;
+  border-bottom: 1px solid var(--gt-border);
+}
+
+#gt-db-root .gt-member-row:last-child { border-bottom: none; }
+
+#gt-db-root .gt-member-name {
+  font-size: 12px;
+  color: var(--gt-text-muted);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Member row action buttons group */
+#gt-db-root .gt-member-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* Find member — indigo */
+#gt-db-root .gt-btn-find-member {
+  background: var(--gt-indigo-bg);
+  color: var(--gt-indigo);
+  border: 1px solid var(--gt-indigo-border);
+  padding: 3px 7px;
+}
+
+/* Status Wrapper */
+#gt-db-root .gt-status-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+#gt-db-root .gt-status-title {
+  font-size: 10px;
+  color: var(--gt-text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Promote member — blue */
+#gt-db-root .gt-btn-promote-member {
+  background: var(--gt-blue-bg);
+  color: var(--gt-blue);
+  border: 1px solid var(--gt-blue-border);
+  padding: 3px 7px;
+}
+
+/* Remove member — red */
+#gt-db-root .gt-btn-remove-member {
+  background: var(--gt-red-bg);
+  color: var(--gt-red);
+  border: 1px solid var(--gt-red-border);
+  padding: 3px 7px;
+  flex-shrink: 0;
+}

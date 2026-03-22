@@ -1,0 +1,262 @@
+/* =============================================================
+   Group Tokens — Actions Settings Dialog (tabbed)
+   ============================================================= */
+
+#gt-actions-settings-root *,
+#gt-actions-settings-root *::before,
+#gt-actions-settings-root *::after { box-sizing: border-box; }
+
+#gt-actions-settings-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1a1c22;
+  color: #eef0f6;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* ── Tab bar ──────────────────────────────────────────────── */
+.gt-as-tabs {
+  display: flex;
+  gap: 0;
+  background: #22252e;
+  border-bottom: 2px solid #2d3140;
+  flex-shrink: 0;
+  padding: 0 6px;
+}
+
+/* Reset Foundry button styles completely */
+.gt-as-tab,
+.gt-as-tab:focus,
+.gt-as-tab:active,
+.gt-as-tab:hover {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #8a8fa0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  box-shadow: none;
+}
+.gt-as-tab:hover {
+  color: #c8cce0;
+}
+.gt-as-tab.active,
+.gt-as-tab.active:hover {
+  color: #5b9cf6;
+  border-bottom-color: #5b9cf6;
+}
+
+/* ── Panel container ──────────────────────────────────────── */
+.gt-as-panels {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+}
+.gt-as-panels::-webkit-scrollbar           { width: 5px; }
+.gt-as-panels::-webkit-scrollbar-track     { background: transparent; }
+.gt-as-panels::-webkit-scrollbar-thumb     { background: #3a3e4c; border-radius: 3px; }
+.gt-as-panels::-webkit-scrollbar-thumb:hover { background: #4e536a; }
+
+.gt-as-panel { display: none; }
+.gt-as-panel.active { display: block; }
+
+/* ── Field blocks ─────────────────────────────────────────── */
+.gt-as-field {
+  margin-bottom: 18px;
+}
+.gt-as-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #eef0f6;
+  margin-bottom: 3px;
+}
+.gt-as-hint {
+  font-size: 11px;
+  color: #9ca1b4;
+  margin: 0 0 8px;
+  line-height: 1.45;
+}
+
+/* Text / select inputs */
+.gt-as-field input[type="text"],
+.gt-as-field select {
+  width: 100%;
+  padding: 8px 11px;
+  height: 36px;
+  background: #2a2d38;
+  border: 1px solid #3e4254;
+  border-radius: 5px;
+  color: #eef0f6;
+  font-size: 13px;
+  line-height: normal;
+  transition: border-color 0.12s;
+  outline: none;
+  box-shadow: none;
+}
+.gt-as-field input[type="text"]:focus,
+.gt-as-field select:focus {
+  border-color: #5b9cf6;
+  box-shadow: 0 0 0 1px rgba(91, 156, 246, 0.25);
+}
+.gt-as-field input[type="text"]::placeholder {
+  color: #555a6e;
+}
+
+/* File picker row */
+.gt-as-file-row {
+  display: flex;
+  gap: 6px;
+}
+.gt-as-file-row input[type="text"] {
+  flex: 1;
+  padding: 8px 11px;
+  background: #2a2d38;
+  border: 1px solid #3e4254;
+  border-radius: 5px;
+  color: #eef0f6;
+  font-size: 13px;
+  transition: border-color 0.12s;
+  outline: none;
+  box-shadow: none;
+}
+.gt-as-file-row input[type="text"]:focus {
+  border-color: #5b9cf6;
+  box-shadow: 0 0 0 1px rgba(91, 156, 246, 0.25);
+}
+.gt-as-file-row input[type="text"]::placeholder {
+  color: #555a6e;
+}
+
+/* File browse button — reset Foundry styles */
+.gt-as-file-btn,
+.gt-as-file-btn:focus,
+.gt-as-file-btn:hover,
+.gt-as-file-btn:active {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  background: #2a2d38;
+  border: 1px solid #3e4254;
+  border-radius: 5px;
+  color: #9ca1b4;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.gt-as-file-btn:hover {
+  color: #5b9cf6;
+  border-color: rgba(91, 156, 246, 0.45);
+}
+
+/* Range slider row */
+.gt-as-range-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gt-as-range-row input[type="range"] {
+  flex: 1;
+  accent-color: #5b9cf6;
+  height: 6px;
+}
+.gt-as-range-value {
+  min-width: 36px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #5b9cf6;
+  background: rgba(91, 156, 246, 0.12);
+  border: 1px solid rgba(91, 156, 246, 0.35);
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.gt-as-footer {
+  padding: 10px 16px;
+  background: #22252e;
+  border-top: 1px solid #2d3140;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.gt-as-footer-spacer { flex: 1; }
+.gt-as-status {
+  font-size: 12px;
+  color: #34d399;
+  min-height: 16px;
+  font-weight: 600;
+}
+
+/* Save button */
+.gt-as-btn-save,
+.gt-as-btn-save:focus,
+.gt-as-btn-save:active {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border: 1px solid rgba(91, 156, 246, 0.40);
+  border-radius: 6px;
+  background: rgba(91, 156, 246, 0.14);
+  color: #5b9cf6;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.1s;
+  box-sizing: border-box;
+}
+.gt-as-btn-save:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+/* Cancel button */
+.gt-as-btn-cancel,
+.gt-as-btn-cancel:focus,
+.gt-as-btn-cancel:active {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca1b4;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.12s;
+  box-sizing: border-box;
+}
+.gt-as-btn-cancel:hover { color: #eef0f6; }
+
+/* ── Suppress Foundry chrome ──────────────────────────────── */
+#gt-actions-settings-window .window-header .header-button.close {
+  display: none !important;
+}
+#gt-actions-settings-window .dialog-buttons {
+  display: none !important;
+}

@@ -1,0 +1,160 @@
+/* =============================================================
+   Group Tokens — Group Configuration Dialog
+   ============================================================= */
+
+#gt-gcfg-root * { box-sizing: border-box; }
+
+#gt-gcfg-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* Scrollable group card list */
+#gt-gcfg-root .gt-gcfg-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 16px;
+  flex: 1;
+}
+
+#gt-gcfg-root .gt-gcfg-scroll::-webkit-scrollbar           { width: 5px; }
+#gt-gcfg-root .gt-gcfg-scroll::-webkit-scrollbar-track     { background: transparent; }
+#gt-gcfg-root .gt-gcfg-scroll::-webkit-scrollbar-thumb     { background: var(--gt-surface-2); border-radius: 3px; }
+#gt-gcfg-root .gt-gcfg-scroll::-webkit-scrollbar-thumb:hover { background: var(--gt-border-hover); }
+
+/* Group card */
+#gt-gcfg-root .gt-cfg-group {
+  background: var(--gt-surface);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius);
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  transition: border-color 0.12s;
+}
+#gt-gcfg-root .gt-cfg-group:hover { border-color: var(--gt-border-hover); }
+
+/* Card title row */
+#gt-gcfg-root .gt-cfg-group-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gt-text);
+  margin-bottom: 10px;
+}
+
+/* Flat numbered tag (replaces gold circle) */
+#gt-gcfg-root .gt-cfg-badge {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: var(--gt-radius-sm);
+  background: var(--gt-surface-2);
+  color: var(--gt-text-muted);
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Field grid */
+#gt-gcfg-root .gt-cfg-fields { display: flex; gap: 12px; }
+#gt-gcfg-root .gt-cfg-field  { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+
+#gt-gcfg-root .gt-cfg-field label {
+  font-size: 11px;
+  color: var(--gt-text-muted);
+  font-weight: 600;
+}
+
+#gt-gcfg-root .gt-cfg-hint { color: var(--gt-text-dim); font-weight: 400; }
+
+/* Read-only value display */
+#gt-gcfg-root .gt-cfg-readonly {
+  font-size: 12px;
+  color: var(--gt-text);
+  background: var(--gt-surface-2);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius-sm);
+  padding: 6px 9px;
+  line-height: 1.5;
+}
+
+/* Input fields (if any editable states are added later) */
+#gt-gcfg-root .gt-cfg-field input {
+  padding: 7px 10px;
+  background: var(--gt-surface-2);
+  border: 1px solid var(--gt-border);
+  border-radius: var(--gt-radius-sm);
+  color: var(--gt-text);
+  font-size: 13px;
+  transition: border-color 0.12s;
+  width: 100%;
+}
+#gt-gcfg-root .gt-cfg-field input:focus     { outline: none; border-color: var(--gt-blue); }
+#gt-gcfg-root .gt-cfg-field input::placeholder { color: var(--gt-text-dim); }
+
+/* Footer */
+#gt-gcfg-root .gt-gcfg-footer {
+  padding: 10px 16px;
+  background: var(--gt-surface);
+  border-top: 1px solid var(--gt-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+#gt-gcfg-root .gt-gcfg-footer-spacer { flex: 1; }
+#gt-gcfg-root .gt-gcfg-status { font-size: 12px; color: var(--gt-green); min-height: 16px; }
+
+/* Open Dashboard button — blue tinted */
+#gt-gcfg-root .btn-save {
+  padding: 7px 16px;
+  border: 1px solid var(--gt-blue-border);
+  border-radius: var(--gt-radius);
+  background: var(--gt-blue-bg);
+  color: var(--gt-blue);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.12s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#gt-gcfg-root .btn-save:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+/* Scene name in card title */
+#gt-gcfg-root .gt-cfg-scene-name {
+  font-size: 11px;
+  color: var(--gt-text-dim);
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+/* Empty-state card */
+#gt-gcfg-root .gt-cfg-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--gt-text-muted);
+}
+
+/* Close button — ghost */
+#gt-gcfg-root .btn-cancel {
+  padding: 7px 14px;
+  border: none;
+  border-radius: var(--gt-radius);
+  background: transparent;
+  color: var(--gt-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+#gt-gcfg-root .btn-cancel:hover { color: var(--gt-text); }

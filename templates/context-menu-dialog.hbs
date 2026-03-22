@@ -1,0 +1,86 @@
+<div id="gt-hud-dialog-root">
+  <div class="gt-info">{{{infoText}}}</div>
+  <div class="gt-actions">
+
+    {{!-- Token IS in a group --}}
+    {{#if hasMembership}}
+
+      {{!-- Always show Toggle for any group member --}}
+      <button class="gt-btn gt-btn-toggle gt-pulse" data-action="toggle" data-group-id="{{groupId}}">
+        <i class="fas fa-sync-alt"></i> Toggle Group #{{groupIndex}}
+      </button>
+
+      {{!-- LEADER with exploded group: offer Get Over Here to gather members --}}
+      {{#if isLeader}}
+        {{#if isGroupExploded}}
+          <button class="gt-btn gt-btn-gather gt-pulse" data-action="get-over-here" data-group-id="{{groupId}}">
+            <i class="fas fa-hand-rock"></i> Get Over Here!
+          </button>
+          <button class="gt-btn gt-btn-position" data-action="get-in-position" data-group-id="{{groupId}}">
+            <i class="fas fa-street-view"></i> Get in Position!
+          </button>
+          <button class="gt-btn gt-btn-save-formation" data-action="save-formation" data-group-id="{{groupId}}">
+            <i class="fas fa-save"></i> Save Formation
+          </button>
+          {{#if hasFormation}}
+          <button class="gt-btn gt-btn-load-formation" data-action="load-formation" data-group-id="{{groupId}}">
+            <i class="fas fa-route"></i> Load Formation
+          </button>
+          {{/if}}
+          {{#if hasTargets}}
+          <button class="gt-btn gt-btn-kill-them-all gt-pulse" data-action="kill-them-all" data-group-id="{{groupId}}">
+            <i class="fas fa-skull-crossbones"></i> Kill them All!
+          </button>
+          {{/if}}
+        {{/if}}
+      {{/if}}
+
+      {{!-- LEADER: suppress Find when the group already has members — navigating to yourself is pointless --}}
+      {{#if isLeader}}
+        {{#unless leaderHasMembers}}
+          <button class="gt-btn gt-btn-find" data-action="find" data-group-id="{{groupId}}">
+            <i class="fas fa-search"></i> Find Group #{{groupIndex}}
+          </button>
+        {{/unless}}
+      {{/if}}
+
+      {{!-- MEMBER: pan to the leader token so the user knows where their group is anchored --}}
+      {{#if isMember}}
+        <button class="gt-btn gt-btn-find" data-action="find" data-group-id="{{groupId}}">
+          <i class="fas fa-crown"></i> Find Leader of Group #{{leaderGroupIndex}}
+        </button>
+      {{/if}}
+
+    {{/if}}
+
+    {{!-- Multi-selection: offer group creation --}}
+    {{#if canCreate}}
+      <button class="gt-btn gt-btn-create" data-action="create">
+        <i class="fas fa-plus"></i> Create Group
+      </button>
+    {{/if}}
+
+    {{!-- Remove from group --}}
+    {{#if showRemove}}
+      <button class="gt-btn gt-btn-remove" data-action="remove">
+        <i class="fas fa-user-minus"></i>
+        {{#if multiSelected}}Remove {{selectedCount}} selected from group{{else}}Remove from group{{/if}}
+      </button>
+    {{/if}}
+
+    {{!-- Ungrouped single token with joinable groups on scene: offer one button per group --}}
+    {{#if hasJoinableGroups}}
+      {{#each joinableGroups}}
+        <button class="gt-btn gt-btn-add-to-group" data-action="add-to-group" data-group-id="{{groupId}}">
+          <i class="fas fa-user-plus"></i> Add to Group #{{groupIndex}} ({{partyTokenName}})
+        </button>
+      {{/each}}
+    {{/if}}
+
+    {{!-- ALWAYS show Dashboard button --}}
+    <button class="gt-btn gt-btn-dashboard" data-action="dashboard">
+      <i class="fas fa-th-list"></i> Open Dashboard
+    </button>
+
+  </div>
+</div>

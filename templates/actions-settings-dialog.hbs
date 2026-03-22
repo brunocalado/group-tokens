@@ -1,0 +1,143 @@
+<div id="gt-actions-settings-root">
+
+  {{!-- Tab bar --}}
+  <nav class="gt-as-tabs">
+    <button class="gt-as-tab active" data-action="switch-tab" data-tab="get-over-here">
+      <i class="fas fa-hand-rock"></i> Get Over Here
+    </button>
+    <button class="gt-as-tab" data-action="switch-tab" data-tab="get-in-position">
+      <i class="fas fa-street-view"></i> Get in Position
+    </button>
+    <button class="gt-as-tab" data-action="switch-tab" data-tab="load-formation">
+      <i class="fas fa-map-marker-alt"></i> Load Formation
+    </button>
+    <button class="gt-as-tab" data-action="switch-tab" data-tab="kill-them-all">
+      <i class="fas fa-skull-crossbones"></i> Kill Them All
+    </button>
+    <button class="gt-as-tab" data-action="switch-tab" data-tab="group-sounds">
+      <i class="fas fa-volume-up"></i> Group / Ungroup
+    </button>
+    <button class="gt-as-tab" data-action="switch-tab" data-tab="movement-speed">
+      <i class="fas fa-tachometer-alt"></i> Movement Speed
+    </button>
+  </nav>
+
+  {{!-- Tab panels --}}
+  <div class="gt-as-panels">
+
+    {{!-- ── Get Over Here ──────────────────────────────────────── --}}
+    <section class="gt-as-panel active" data-tab="get-over-here">
+      <div class="gt-as-field">
+        <label>Audio File</label>
+        <p class="gt-as-hint">Sound played for all clients when "Get Over Here" is used.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4GetOverHere" value="{{audioFile4GetOverHere}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4GetOverHere" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {{!-- ── Get in Position ────────────────────────────────────── --}}
+    <section class="gt-as-panel" data-tab="get-in-position">
+      <div class="gt-as-field">
+        <label>Spread Radius (grid squares)</label>
+        <p class="gt-as-hint">Maximum spread distance in <strong>grid squares</strong> — always counted in squares regardless of the scene's distance unit (feet, meters, etc.).</p>
+        <div class="gt-as-range-row">
+          <input type="range" name="getInPositionRadius" value="{{getInPositionRadius}}" min="3" max="100" step="1" data-action="buffer-range" />
+          <span class="gt-as-range-value">{{getInPositionRadius}}</span>
+        </div>
+      </div>
+
+      <div class="gt-as-field">
+        <label>Audio File</label>
+        <p class="gt-as-hint">Sound played for all clients when "Get in Position" is used.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4GetInPosition" value="{{audioFile4GetInPosition}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4GetInPosition" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {{!-- ── Load Formation ────────────────────────────────────── --}}
+    <section class="gt-as-panel" data-tab="load-formation">
+      <div class="gt-as-field">
+        <label>Audio File</label>
+        <p class="gt-as-hint">Sound played for all clients when "Load Formation" is used.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4LoadFormation" value="{{audioFile4LoadFormation}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4LoadFormation" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {{!-- ── Kill Them All ───────────────────────────────────────── --}}
+    <section class="gt-as-panel" data-tab="kill-them-all">
+      <div class="gt-as-field">
+        <label>Audio File</label>
+        <p class="gt-as-hint">Sound played for all clients when "Kill Them All!" is used.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4KillThemAll" value="{{audioFile4KillThemAll}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4KillThemAll" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {{!-- ── Group / Ungroup Sounds ─────────────────────────────── --}}
+    <section class="gt-as-panel" data-tab="group-sounds">
+
+      <div class="gt-as-field">
+        <label>Group Audio</label>
+        <p class="gt-as-hint">Sound played for all clients when tokens are grouped.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4Crunch" value="{{audioFile4Crunch}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4Crunch" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="gt-as-field">
+        <label>Ungroup Audio</label>
+        <p class="gt-as-hint">Sound played for all clients when tokens are ungrouped.</p>
+        <div class="gt-as-file-row">
+          <input type="text" name="audioFile4Explode" value="{{audioFile4Explode}}" data-action="buffer-setting" placeholder="No audio" />
+          <button class="gt-as-file-btn" data-action="pick-file" data-target="audioFile4Explode" title="Browse">
+            <i class="fas fa-file-audio"></i>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    {{!-- ── Movement Speed ──────────────────────────────────────── --}}
+    <section class="gt-as-panel" data-tab="movement-speed">
+      <div class="gt-as-field">
+        <label>Movement Speed</label>
+        <p class="gt-as-hint">Controls how fast member tokens walk during Get Over Here, Kill Them All, Get in Position, and Load Formation.</p>
+        <select name="gatherSpeed" data-action="buffer-setting">
+          <option value="fast"   {{#if (eq gatherSpeed "fast")}}selected{{/if}}>Fast</option>
+          <option value="normal" {{#if (eq gatherSpeed "normal")}}selected{{/if}}>Normal</option>
+          <option value="slow"   {{#if (eq gatherSpeed "slow")}}selected{{/if}}>Slow</option>
+        </select>
+      </div>
+    </section>
+
+  </div>
+
+  {{!-- Footer --}}
+  <footer class="gt-as-footer">
+    <span class="gt-as-status" id="gt-as-save-status"></span>
+    <span class="gt-as-footer-spacer"></span>
+    <button class="gt-as-btn-cancel" data-action="cancel-dialog">Cancel</button>
+    <button class="gt-as-btn-save" data-action="save-dialog"><i class="fas fa-save"></i> Save</button>
+  </footer>
+
+</div>

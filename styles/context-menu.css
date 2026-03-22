@@ -1,0 +1,141 @@
+/* =============================================================
+   Group Tokens — Context Menu / Token HUD Dialog
+   ============================================================= */
+
+/* Removes default ApplicationV2 padding for flush edge-to-edge UI */
+.gt-context-menu-app .window-content {
+  padding: 0;
+}
+
+#gt-hud-dialog-root * { box-sizing: border-box; }
+
+#gt-hud-dialog-root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--gt-bg);
+  color: var(--gt-text);
+  padding: 12px 14px 10px;
+}
+
+/* Info banner at the top of the menu */
+#gt-hud-dialog-root .gt-info {
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 7px 10px;
+  background: #111317;
+  border-left: 2px solid var(--gt-blue);
+  border-radius: 0 var(--gt-radius-sm) var(--gt-radius-sm) 0;
+  line-height: 1.5;
+}
+
+/* Actor name in the info banner — explicit white for readability */
+#gt-hud-dialog-root .gt-info strong {
+  color: #ffffff;
+}
+
+/* Action button column */
+#gt-hud-dialog-root .gt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Base button */
+#gt-hud-dialog-root .gt-btn {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--gt-radius);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: filter 0.12s, transform 0.12s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#gt-hud-dialog-root .gt-btn i { width: 13px; text-align: center; flex-shrink: 0; }
+
+#gt-hud-dialog-root .gt-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* Toggle — blue, darkened background with white text */
+#gt-hud-dialog-root .gt-btn-toggle {
+  background: rgba(59, 130, 246, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-blue);
+}
+
+/* Find — indigo, darkened background with white text */
+#gt-hud-dialog-root .gt-btn-find {
+  background: rgba(99, 102, 241, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-indigo);
+}
+
+/* Create — green, darkened background with white text */
+#gt-hud-dialog-root .gt-btn-create {
+  background: rgba(34, 197, 94, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-green);
+}
+
+/* Add to Group — same green family as Create, white text */
+#gt-hud-dialog-root .gt-btn-add-to-group {
+  background: rgba(34, 197, 94, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-green);
+}
+
+/* Remove — red, darkened background with white text */
+#gt-hud-dialog-root .gt-btn-remove {
+  background: rgba(239, 68, 68, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-red);
+}
+
+/* Dashboard — darkened neutral surface with white text */
+#gt-hud-dialog-root .gt-btn-dashboard {
+  background: #1a1d24;
+  color: #ffffff;
+  border: 1px solid var(--gt-border);
+}
+
+/* Subtle pulse on the primary Toggle button to draw attention */
+@keyframes gt-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(59, 130, 246, 0); }
+}
+#gt-hud-dialog-root .gt-pulse { animation: gt-pulse 2.4s infinite; }
+
+/* Gather — amber */
+#gt-hud-dialog-root .gt-btn-gather {
+  background: rgba(245, 158, 11, 0.25);
+  color: #ffffff;
+  border: 1px solid var(--gt-amber);
+}
+
+/* Position — teal */
+#gt-hud-dialog-root .gt-btn-position {
+  background: rgba(20, 184, 166, 0.25);
+  color: #ffffff;
+  border: 1px solid #14b8a6;
+}
+
+/* Save Formation — green */
+#gt-hud-dialog-root .gt-btn-save-formation {
+  background: rgba(34, 197, 94, 0.15);
+  color: #ffffff;
+  border: 1px solid var(--gt-green);
+}
+
+/* Load Formation — indigo */
+#gt-hud-dialog-root .gt-btn-load-formation {
+  background: rgba(99, 102, 241, 0.15);
+  color: #ffffff;
+  border: 1px solid var(--gt-indigo);
+}
