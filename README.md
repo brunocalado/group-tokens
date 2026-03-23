@@ -170,4 +170,6 @@ https://raw.githubusercontent.com/brunocalado/group-tokens/main/module.json
 
 * **audio_crunch:** Glaneur de sons for the "crunch" sound provided via freesound.org, released under CC BY 3.0 license
 
+* **banner.webp and thumbnail.webp:** [Link](https://pt.pngtree.com/freepng/tiny-spartans-might-in-miniature-form_23041278.html)
+
 * **Disclaimer:** This is a fork from this [Link](https://github.com/coffiarts/FoundryVTT-crunch-my-party).
